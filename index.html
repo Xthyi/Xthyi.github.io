@@ -64,7 +64,7 @@
   }
   .sub{color:var(--muted);font-size:15px;margin:0;}
   .intro{margin:22px 0 0;max-width:52ch;color:var(--text);}
-  .intro span{color:var(--muted);}
+  .intro span{display:block;margin-top:4px;color:var(--muted);}
 
   /* 分区 */
   section{margin-top:64px;}
@@ -89,8 +89,8 @@
     flex:none;opacity:.75;
   }
   .link .body{flex:1;min-width:0;}
-  .link .name{font-size:15px;font-weight:500;}
-  .link .desc{font-size:13px;color:var(--muted);margin-top:1px;
+  .link .name{display:block;font-size:15px;font-weight:500;}
+  .link .desc{display:block;font-size:13px;color:var(--muted);margin-top:1px;
     overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
   .link .arrow{color:var(--muted);font-size:15px;flex:none;}
 
@@ -118,12 +118,6 @@
     color:var(--muted);font-size:13px;
     display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
   }
-
-  .fade{animation:fade .7s ease both;}
-  .fade:nth-child(2){animation-delay:.08s;}
-  .fade:nth-child(3){animation-delay:.16s;}
-  @keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
-  @media(prefers-reduced-motion:reduce){.fade{animation:none;}}
 
   @media(max-width:560px){
     .wrap{padding:48px 20px 72px;}
