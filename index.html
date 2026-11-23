@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>徐天浩 · Xthyi</title>
+<meta name="description" content="徐天浩（Xthyi）的个人主页与链接合集。">
+<style>
+  :root{
+    --bg:#fbfaf8;
+    --card:#ffffff;
+    --text:#1c1c1e;
+    --muted:#6f6f76;
+    --line:#e9e6e1;
+    --accent:#3f6f60;
+    --shadow:0 1px 2px rgba(28,28,30,.04), 0 8px 24px rgba(28,28,30,.05);
+  }
+  html[data-theme="dark"]{
+    --bg:#14161a;
+    --card:#1b1e23;
+    --text:#e9eaec;
+    --muted:#9aa1a9;
+    --line:#282d34;
+    --accent:#7fb3a2;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.75;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+    transition:background .3s ease,color .3s ease;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:72px 28px 96px;}
+  a{color:inherit;text-decoration:none;}
+
+  /* 顶栏 */
+  .top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;}
+  .avatar{
+    width:52px;height:52px;border-radius:50%;
+    background:var(--card);border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+    font-family:"Songti SC","STSong",serif;font-size:22px;color:var(--accent);
+    box-shadow:var(--shadow);flex:none;
+  }
+  .toggle{
+    border:1px solid var(--line);background:var(--card);color:var(--muted);
+    border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer;
+    font-family:inherit;transition:color .2s,border-color .2s;flex:none;
+  }
+  .toggle:hover{color:var(--text);border-color:var(--muted);}
+
+  /* 首屏 */
+  header{margin-top:28px;}
+  h1{
+    font-family:"Songti SC","STSong","SimSun",serif;
+    font-size:38px;font-weight:600;letter-spacing:.04em;
+    margin:0 0 10px;line-height:1.3;
+  }
+  .sub{color:var(--muted);font-size:15px;margin:0;}
+  .intro{margin:22px 0 0;max-width:52ch;color:var(--text);}
+  .intro span{color:var(--muted);}
+
+  /* 分区 */
+  section{margin-top:64px;}
+  h2{
+    font-size:13px;font-weight:600;letter-spacing:.18em;
+    color:var(--muted);text-transform:uppercase;
+    margin:0 0 20px;padding-bottom:12px;border-bottom:1px solid var(--line);
+  }
+
+  /* 链接卡片 */
+  .links{display:grid;gap:12px;}
+  .link{
+    display:flex;align-items:center;gap:16px;
+    padding:16px 18px;background:var(--card);
+    border:1px solid var(--line);border-radius:14px;
+    box-shadow:var(--shadow);
+    transition:transform .18s ease,border-color .18s ease;
+  }
+  .link:hover{transform:translateY(-2px);border-color:var(--accent);}
+  .link .dot{
+    width:8px;height:8px;border-radius:50%;background:var(--accent);
+    flex:none;opacity:.75;
+  }
+  .link .body{flex:1;min-width:0;}
+  .link .name{font-size:15px;font-weight:500;}
+  .link .desc{font-size:13px;color:var(--muted);margin-top:1px;
+    overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .link .arrow{color:var(--muted);font-size:15px;flex:none;}
+
+  /* 项目卡片 */
+  .grid{display:grid;gap:12px;}
+  @media(min-width:620px){ .grid{grid-template-columns:1fr 1fr;} }
+  .card{
+    padding:20px;background:var(--card);border:1px solid var(--line);
+    border-radius:14px;box-shadow:var(--shadow);
+    display:flex;flex-direction:column;gap:8px;
+    transition:transform .18s ease,border-color .18s ease;
+  }
+  .card:hover{transform:translateY(-2px);border-color:var(--accent);}
+  .card h3{margin:0;font-size:15px;font-weight:600;letter-spacing:.01em;}
+  .card p{margin:0;font-size:13.5px;color:var(--muted);line-height:1.65;}
+  .tag{
+    align-self:flex-start;margin-top:4px;font-size:11.5px;letter-spacing:.06em;
+    color:var(--accent);border:1px solid var(--line);border-radius:999px;
+    padding:2px 9px;
+  }
+
+  /* 页脚 */
+  footer{
+    margin-top:80px;padding-top:24px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:13px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+
+  .fade{animation:fade .7s ease both;}
+  .fade:nth-child(2){animation-delay:.08s;}
+  .fade:nth-child(3){animation-delay:.16s;}
+  @keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+  @media(prefers-reduced-motion:reduce){.fade{animation:none;}}
+
+  @media(max-width:560px){
+    .wrap{padding:48px 20px 72px;}
+    h1{font-size:30px;}
+    section{margin-top:48px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="top">
+    <div class="avatar">徐</div>
+    <button class="toggle" id="themeBtn" type="button">深色</button>
+  </div>
+
+  <header class="fade">
+    <h1>徐天浩</h1>
+    <p class="sub">Xthyi · 软件技术专业 · 郑州</p>
+    <p class="intro">这里放我的项目和常去的链接。<span>喜欢跑步，喜欢把想法做成能跑起来的小东西。</span></p>
+  </header>
+
+  <!-- ============ 链接区 ============
+       想加新链接：往下找到 <script> 里的 LINKS 数组，照着格式加一行即可 -->
+  <section class="fade">
+    <h2>链接</h2>
+    <div class="links" id="links"></div>
+  </section>
+
+  <section class="fade">
+    <h2>项目</h2>
+    <div class="grid">
+      <a class="card" href="https://github.com/Xthyi/python-tian" target="_blank" rel="noopener">
+        <h3>python-tian</h3>
+        <p>Python 入门练习仓库，从变量、判断到循环，一路写下来的练习代码。</p>
+        <span class="tag">Python · 公开</span>
+      </a>
+      <div class="card">
+        <h3>课堂点名系统</h3>
+        <p>单文件网页做的随机点名工具，支持双班切换，课堂上投屏直接用。</p>
+        <span class="tag">本地应用</span>
+      </div>
+      <div class="card">
+        <h3>课堂本</h3>
+        <p>记、问、绩、则四个模块，把上课要记的东西收在一个窗口里。</p>
+        <span class="tag">本地应用</span>
+      </div>
+      <div class="card">
+        <h3>天一管家</h3>
+        <p>桌面端小助手，用 React 加 Express 和 SQLite 搭起来的个人数据面板。</p>
+        <span class="tag">本地应用</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© <span id="year"></span> 徐天浩</span>
+    <span>内容随时更新</span>
+  </footer>
+</div>
+
+<script>
+  // ====== 改这里就能改链接：name 是标题，desc 是副说明，url 是地址 ======
+  const LINKS = [
+    { name: "GitHub 主页",        desc: "代码都在这里",              url: "https://github.com/Xthyi" },
+    { name: "本站源码",           desc: "这个页面本身也是一个仓库",   url: "https://github.com/Xthyi/Xthyi.github.io" },
+    { name: "python-tian",        desc: "Python 学习练习",           url: "https://github.com/Xthyi/python-tian" }
+  ];
+
+  const box = document.getElementById("links");
+  LINKS.forEach(function (item) {
+    const a = document.createElement("a");
+    a.className = "link";
+    a.href = item.url;
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.innerHTML =
+      '<span class="dot"></span>' +
+      '<span class="body"><span class="name"></span><span class="desc"></span></span>' +
+      '<span class="arrow">↗</span>';
+    a.querySelector(".name").textContent = item.name;
+    a.querySelector(".desc").textContent = item.desc;
+    box.appendChild(a);
+  });
+
+  // 年份
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // 主题切换：跟随系统，手动改过就记住
+  const root = document.documentElement;
+  const btn = document.getElementById("themeBtn");
+  const saved = localStorage.getItem("theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  setTheme(saved || (prefersDark ? "dark" : "light"));
+
+  function setTheme(mode) {
+    root.setAttribute("data-theme", mode);
+    btn.textContent = mode === "dark" ? "浅色" : "深色";
+  }
+  btn.addEventListener("click", function () {
+    const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    setTheme(next);
+    localStorage.setItem("theme", next);
+  });
+</script>
+</body>
+</html>
